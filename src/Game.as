@@ -12,7 +12,7 @@ package
 		
 		public function Game() 
 		{
-			super(800, 600, GameState, 1);
+			super(800, 522, GameState, 1);
 			
 		}
 		
