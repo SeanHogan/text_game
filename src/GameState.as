@@ -5,6 +5,7 @@ package
 	import org.flixel.FlxSound;
 	import org.flixel.FlxSprite;
 	import org.flixel.FlxState;
+	import org.flixel.FlxU;
 	import org.flixel.plugin.photonstorm.FlxBitmapFont;
 	
 	public class GameState extends FlxState 
@@ -102,6 +103,11 @@ package
 				super.update();
 				return;
 			} else if (state == s_outro) {
+				text_box.visible = true;
+				text_box.text = "Press Space to Continue";
+				if (FlxG.keys.justPressed("SPACE")) {
+					FlxU.openURL("http://luciditygame.com/drcomic.html");
+				}
 				super.update();
 				return;
 			}
