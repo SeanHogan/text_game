@@ -69,7 +69,7 @@ package
 			text_box.y = 400;
 			add(text_box);
 			text_box.scale.x = text_box.scale.y = 2;
-			text_box.text = "Press Space\n";
+			text_box.text = "Click to begin\n";
 			
 			// Make list of audio hints
 			for (var i:int = 0; i < max_questions; i++) {
@@ -93,7 +93,7 @@ package
 			// Show Intro screen
 			
 			if (state == s_intro) {
-				if (FlxG.keys.SPACE) {
+				if (FlxG.keys.SPACE || FlxG.mouse.justPressed()) {
 					state = s_game;
 					text_box.text = "Start typing";
 					//intro_screen.visible = false;
@@ -104,8 +104,8 @@ package
 				return;
 			} else if (state == s_outro) {
 				text_box.visible = true;
-				text_box.text = "Press Space to Continue";
-				if (FlxG.keys.justPressed("SPACE")) {
+				text_box.text = "Click to continue";
+				if (FlxG.keys.justPressed("SPACE") || FlxG.mouse.justPressed()) {
 					FlxU.openURL("http://luciditygame.com/drcomic.html");
 				}
 				super.update();
